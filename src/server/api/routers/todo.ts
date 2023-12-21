@@ -8,7 +8,7 @@ import {
 
 import { todoInput } from "~/types/todo";
 
-export const postRouter = createTRPCRouter({
+export const todoRouter = createTRPCRouter({
   hello: publicProcedure
     .input(z.object({ text: z.string() }))
     .query(({ input }) => {
