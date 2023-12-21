@@ -59,26 +59,9 @@ export const todoRouter = createTRPCRouter({
 
   getAll: protectedProcedure.query(({ ctx }) => {
     const todos = ctx.db.todo.findMany({
-        orderBy: { createdAt: "desc" },
-        where:  { id: ctx.session.user.id },
+        where:  { userId: ctx.session.user.id },
       });
-    console.log(todos);
-    return [
-        {
-            id: 1,
-            name: "test",
-            createdAt: new Date(),
-            updatedAt: new Date(),
-            done: false,
-        },
-        {
-            id: 2,
-            name: "test2",
-            createdAt: new Date(),
-            updatedAt: new Date(),
-            done: true,
-        }
-    ]
+    return todos;
   }),
 
 });
