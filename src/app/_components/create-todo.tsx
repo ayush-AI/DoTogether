@@ -31,11 +31,11 @@ export function CreateTodo() {
         placeholder="your todo"
         value={name}
         onChange={(e) => setName(e.target.value)}
-        className="w-full rounded-full px-4 py-2 text-black"
+        className="mt-1 w-full rounded-full px-4 py-2 text-black"
       />
       <button
         type="submit"
-        className="rounded-full bg-white/10 px-10 py-3 font-semibold transition hover:bg-white/20"
+        className="mt-1 rounded-full bg-white/10 px-10 py-3 font-semibold transition hover:bg-white/20"
         disabled={!name || createPost.isLoading}
       >
         {createPost.isLoading ? "Submitting..." : "Submit"}

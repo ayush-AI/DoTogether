@@ -17,14 +17,13 @@ export async function TodoList() {
       ) : (
         <div className="m-2 flex flex-col gap-4 p-5">
           {latestPost.map((todo) => (
-            <SingleTodo key={todo.id} todo={todo} />
+            <SingleTodo session={session} key={todo.id} todo={todo} />
           ))}
         </div>
       )}
-
       <CreateTodo />
 
-      <div className="p-2 text-center">
+      <div className="absolute right-0 top-0 p-5">
         {session ? <Auth session={session} /> : null}
       </div>
     </div>
