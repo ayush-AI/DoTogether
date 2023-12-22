@@ -58,9 +58,7 @@ export const todoRouter = createTRPCRouter({
     }),
 
   getAll: protectedProcedure.query(({ ctx }) => {
-    const todos = ctx.db.todo.findMany({
-        where:  { userId: ctx.session.user.id },
-      });
+    const todos = ctx.db.todo.findMany();
     return todos;
   }),
 
